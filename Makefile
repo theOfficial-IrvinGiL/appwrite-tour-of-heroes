@@ -1,5 +1,9 @@
+ENVFILE ?= env.example
+
 .PHONY: dev-start
 dev-start:
+	# copy env file
+	cp $(ENVFILE) .env
 	# remove existing images
 	docker rmi -f appwrite-tour-of-heroes:1.0
 	# building docker image
