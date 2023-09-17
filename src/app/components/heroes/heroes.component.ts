@@ -22,10 +22,7 @@ export class HeroesComponent implements OnInit {
   }
 
   private getHeroes(): void {
-    console.log(this.collectionId);
-    console.log(this.databaseId);
-
-    let heroDatabase: Databases = new Databases(AppwriteRepository.client());
+    let heroDatabase: Databases = AppwriteRepository.database();
 
     const promise = heroDatabase.listDocuments(
       this.databaseId, this.collectionId);

@@ -1,4 +1,4 @@
-import { Client } from 'appwrite';
+import { Client, Databases } from 'appwrite';
 
 export class AppwriteRepository {
 
@@ -7,5 +7,9 @@ export class AppwriteRepository {
 
     client.setEndpoint(import.meta.env.NG_APP_APPWRITE_ENDPOINT).setProject(import.meta.env.NG_APP_APPWRITE_PROJECT);
     return client;
+  }
+
+  public static database(): Databases {
+    return new Databases(this.client());
   }
 }
