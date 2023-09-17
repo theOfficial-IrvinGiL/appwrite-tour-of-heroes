@@ -11,6 +11,12 @@ interface ImportMetaEnv {
   // Add your environment variables below
   // readonly NG_APP_API_URL: string;
   [key: string]: any;
+  readonly NG_APP_APPLICATION_ENVIRONMENT: string;
+  readonly NG_APP_APPWRITE_ENDPOINT: string;
+  readonly NG_APP_APPWRITE_PROJECT: string;
+  readonly NG_APP_API_ENDPOINT: string;
+  readonly NG_APP_HERO_DB_COLLECTION_ID: string;
+  readonly NG_APP_APPLICATION_DATABASE_ID: string;
 }
 
 /*
@@ -31,12 +37,13 @@ interface ImportMetaEnv {
 
 // If your project references @types/node directly (in you) or indirectly (as in RxJS < 7.6.0),
 // you might need to use the following declaration merging.
-// declare namespace NodeJS {
-//   export interface ProcessEnv {
-//     readonly NG_APP_ENV: string;
-//     // Add your environment variables below
-//   }
-// }
+declare namespace NodeJS {
+  export interface ProcessEnv {
+    readonly NG_APP_ENV: string;
+
+    // Add your environment variables below
+  }
+}
 
 // If you're using Angular Universal and process.env notation, you'll need to add the following to your tsconfig.server.json:
 /* In your tsconfig.server.json */

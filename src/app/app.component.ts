@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {Client} from "appwrite";
 
 @Component({
   selector: 'app-root',
